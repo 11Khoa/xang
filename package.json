@@ -1,0 +1,6 @@
+{
+  "name": "petrol-price-json",
+  "dependencies": {
+    "axios": "^1.6.0"
+  }
+}
