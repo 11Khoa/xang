@@ -16,13 +16,18 @@ const fs = require('fs');
   });
 
   // Chờ selector cụ thể xuất hiện (rất quan trọng!)
-  const menu=await page.waitForSelector('.f-list table tbody', { timeout: 15000 })
+  const menu=await page.waitForSelector('.f-list', { timeout: 15000 })
     .catch(() => console.log('Không thấy class sau 15s'));
 
     
   const html = await menu.evaluate(el => el.innerHTML);
   
-  const regex = /<tr><td>([^<]+)<\/td><td>([^<]+)<\/td><td>([^<]+)<\/td><\/tr>/g;
+  const regex = /<tr>\s*<td>([^<]+)<\/td>\s*<td>([^<]+)<\/td>\s*<td>([^<]+)<\/td>\s*<\/tr>/g;
+
+  const regexTime = /<p[^>]*>(?:<span[^>]*>[^<]*<\/span>)?\s*([\s\S]*?)<\/p>/i;
+  const matchTime = html.match(regexTime);
+  const textTime = matchTime ? matchTime[1].replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim() : '';
+
 
   const data = [];
   let match;
@@ -35,7 +40,14 @@ const fs = require('fs');
       vung_2: vung2.trim()
     });
   }
-  const result=JSON.stringify(data, null, 2);
+  const price=JSON.stringify(data, null, 2);
+  const result={
+    time: textTime,
+    price
+  }
+  console.log(result);
+  
+  
   fs.writeFileSync('prices.json', JSON.stringify(result, null, 2), 'utf8');
   console.log('Đã ghi thành công file: prices.json');
 
