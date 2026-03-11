@@ -53,3 +53,62 @@ const fs = require('fs');
 
   await browser.close();
 })();
+
+function getTodayVCBDate() {
+  const now = new Date();
+  const y = now.getFullYear();
+  const m = String(now.getMonth() + 1).padStart(2, "0");
+  const d = String(now.getDate()).padStart(2, "0");
+  return `${y}${m}${d}`;
+}
+
+async function getVCBRates() {
+
+  const date = getTodayVCBDate();
+  const url = `https://www.vietcombank.com.vn/api/exchangerates?date=${date}`;
+  const base = "https://www.vietcombank.com.vn";
+  const flagMap = {
+    USD: "🇺🇸",
+    EUR: "🇪🇺",
+    GBP: "🇬🇧",
+    JPY: "🇯🇵",
+    AUD: "🇦🇺",
+    CAD: "🇨🇦",
+    CHF: "🇨🇭",
+    CNY: "🇨🇳",
+    HKD: "🇭🇰",
+    SGD: "🇸🇬",
+    KRW: "🇰🇷",
+    THB: "🇹🇭",
+    MYR: "🇲🇾",
+    TWD: "🇹🇼",
+    DKK: "🇩🇰",
+    NOK: "🇳🇴",
+    SEK: "🇸🇪",
+    RUB: "🇷🇺",
+    INR: "🇮🇳"
+  };
+
+  const res = await fetch(url);
+  const json = await res.json();
+
+  const updated = json.UpdatedDate;
+
+  function normalizeVCB(json) {
+    return {
+      ...json,
+      Data: json.Data.map(c => ({
+        ...c,
+        icon: base + c.icon,              // giữ icon + thêm base url
+        emoji: flagMap[c.currencyCode] || "🏳️"
+      }))
+    };
+  }
+  const data = normalizeVCB(json);
+
+
+  fs.writeFileSync('public/rates.json', JSON.stringify(data, null, 2), 'utf8');
+  console.log('Đã ghi thành công file: public/rates.json');
+}
+
+getVCBRates();
