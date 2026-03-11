@@ -2,34 +2,57 @@ name: Update Petrolimex Prices
 
 on:
   schedule:
-    - cron: '0 8 * * *'          # Mỗi ngày lúc 8h sáng (UTC) → ~15h VN
-  workflow_dispatch:             # Cho phép chạy thủ công
+    - cron: '0 8 * * *'          # 8h UTC ≈ 15h VN
+  workflow_dispatch:             # Chạy thủ công khi cần
 
 jobs:
   scrape:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0           # Quan trọng để git push ổn định
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'       # Hoặc 22, miễn >=18 để fetch native
+          node-version: '20'
 
       - name: Install dependencies
         run: npm install puppeteer
 
-      - name: Run scraper
-        run: node index.js   # tên file code của bạn
+      - name: Install jq (dùng để tạo/cập nhật JSON nếu cần)
+        run: sudo apt-get update && sudo apt-get install -y jq
 
-      - name: Commit & push if changed
+      - name: Ensure prices.json exists (array rỗng nếu mới)
+        run: |
+          FILE="prices.json"
+          if [ ! -f "$FILE" ]; then
+            echo "[]" > "$FILE"
+            echo "Tạo mới prices.json (array rỗng)"
+          else
+            echo "prices.json đã tồn tại"
+          fi
+
+      - name: Run scraper (giả sử index.js sẽ đọc prices.json cũ → append → ghi đè)
+        run: node index.js
+
+      - name: Commit & push if there are changes
         run: |
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
+
           git add prices.json
-          git diff --staged --quiet || git commit -m "Update prices $(date +'%Y-%m-%d')"
-          git push
+
+          # Kiểm tra có thay đổi thực sự không
+          if git diff --staged --quiet; then
+            echo "Không có thay đổi trong prices.json → bỏ qua commit"
+          else
+            git commit -m "Update Petrolimex prices $(date +'%Y-%m-%d %H:%M UTC')"
+            git push
+            echo "Đã commit & push cập nhật giá mới"
+          fi
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # tự động có sẵn
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
