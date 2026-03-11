@@ -1,33 +1,36 @@
-const axios = require("axios");
+const { chromium } = require("playwright");
 const fs = require("fs");
 
-async function run() {
+async function getPrices() {
 
-  const url = "https://www.petrolimex.com.vn/nd/bao-gia-xang-dau.html";
+  const browser = await chromium.launch();
+  const page = await browser.newPage();
 
-  const { data: html } = await axios.get(url, {
-    headers: {
-      "user-agent": "Mozilla/5.0"
-    }
+  await page.goto(
+    "https://www.petrolimex.com.vn/nd/bao-gia-xang-dau.html",
+    { waitUntil: "domcontentloaded" }
+  );
+
+  await page.waitForFunction(() => window.__vieapps?.prices?.products);
+
+  const products = await page.evaluate(() => {
+    return window.__vieapps.prices.products;
   });
 
-  // lấy object __vieapps.prices
-  const match = html.match(/__vieapps\.prices\s*=\s*({[\s\S]*?});/);
+  await browser.close();
 
-  if (!match) {
-    throw new Error("prices object not found");
-  }
+  return products;
+}
 
-  const obj = eval("(" + match[1] + ")");
+(async () => {
 
-  const products = obj.products;
+  const prices = await getPrices();
 
   fs.writeFileSync(
     "prices.json",
-    JSON.stringify(products, null, 2)
+    JSON.stringify(prices, null, 2)
   );
 
-  console.log("prices.json updated");
-}
+  console.log("prices.json created");
 
-run();
+})();
