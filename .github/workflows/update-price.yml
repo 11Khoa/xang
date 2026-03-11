@@ -28,7 +28,7 @@ jobs:
 
       - name: Ensure prices.json exists (array rỗng nếu mới)
         run: |
-          FILE="prices.json"
+          FILE="public/prices.json"
           if [ ! -f "$FILE" ]; then
             echo "[]" > "$FILE"
             echo "Tạo mới prices.json (array rỗng)"
@@ -44,7 +44,7 @@ jobs:
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
 
-          git add prices.json
+          git add public/prices.json
 
           # Kiểm tra có thay đổi thực sự không
           if git diff --staged --quiet; then

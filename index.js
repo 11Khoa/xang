@@ -48,8 +48,8 @@ const fs = require('fs');
   console.log(result);
   
   
-  fs.writeFileSync('prices.json', JSON.stringify(result, null, 2), 'utf8');
-  console.log('Đã ghi thành công file: prices.json');
+  fs.writeFileSync('public/prices.json', JSON.stringify(result, null, 2), 'utf8');
+  console.log('Đã ghi thành công file: public/prices.json');
 
   await browser.close();
 })();
