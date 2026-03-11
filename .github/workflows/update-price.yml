@@ -22,7 +22,7 @@ jobs:
         run: npm install cheerio
 
       - name: Run scraper
-        run: node scrape-petrolimex.js   # tên file code của bạn
+        run: node index.js   # tên file code của bạn
 
       - name: Commit & push if changed
         run: |
