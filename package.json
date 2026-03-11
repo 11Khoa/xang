@@ -1,6 +1,8 @@
 {
   "name": "petrol-price-json",
   "dependencies": {
-    "playwright": "^1.42.0"
+    "cheerio": "^1.2.0",
+    "playwright": "^1.42.0",
+    "puppeteer": "^24.39.0"
   }
 }
