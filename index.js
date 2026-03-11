@@ -30,9 +30,13 @@ async function getLatestPrices() {
 
   // Tìm phần nội dung chính (thường trong .content hoặc .detail-content)
   const content = $(".header__pricePetrol").first();
+  console.log({content});
+  
   if (content.length === 0) throw new Error("Không tìm thấy nội dung bài viết");
 
   const text = content.text().replace(/\s+/g, " ").trim();
+  console.log({text});
+  
 
   // Cách đơn giản: extract các dòng có dạng "Xăng RON 95-V   22.XXX" hoặc tương tự
   const priceLines = text.match(/((Xăng|DO|Dầu|Diesel|Mazút)[^:]+?:\s*[\d.,]+(\s*(đồng|lít|kg))?)/gi) || [];
@@ -57,7 +61,9 @@ async function getLatestPrices() {
     date: $(".date, .time, meta[property='article:published_time']").text().trim() || "không rõ",
     sourceUrl: fullUrl,
     rawLines: prices,
-    structured: result
+    structured: result,
+    content,
+    text
   };
 }
 
