@@ -36,8 +36,8 @@ const fs = require('fs');
     });
   }
   const result=JSON.stringify(data, null, 2);
-  fs.writeFileSync('price.json', JSON.stringify(result, null, 2), 'utf8');
-  console.log('Đã ghi thành công file: price.json');
+  fs.writeFileSync('prices.json', JSON.stringify(result, null, 2), 'utf8');
+  console.log('Đã ghi thành công file: prices.json');
 
   await browser.close();
 })();
