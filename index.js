@@ -29,7 +29,7 @@ async function getLatestPrices() {
   const $ = cheerio.load(detailHtml);
 
   // Tìm phần nội dung chính (thường trong .content hoặc .detail-content)
-  const content = $(".content, .detail-content, .nd-detail, article, .post-content").first();
+  const content = $(".header__pricePetrol").first();
   if (content.length === 0) throw new Error("Không tìm thấy nội dung bài viết");
 
   const text = content.text().replace(/\s+/g, " ").trim();
