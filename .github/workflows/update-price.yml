@@ -2,7 +2,7 @@ name: Update Petrolimex Prices
 
 on:
   schedule:
-    - cron: '0 8 * * *'          # 8h UTC ≈ 15h VN
+    - cron: '0 1,9,17 * * *'          # 8h UTC ≈ 15h VN
   workflow_dispatch:             # Chạy thủ công khi cần
 
 jobs:
