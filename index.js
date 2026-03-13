@@ -45,7 +45,7 @@ const fs = require('fs');
     time: textTime,
     price
   }
-  console.log(result);
+  // console.log(result);
   
   
   fs.writeFileSync('public/prices.json', JSON.stringify(result, null, 2), 'utf8');
