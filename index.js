@@ -1,12 +1,13 @@
-const puppeteer = require('puppeteer');  // npm install puppeteer
+const puppeteer = require('puppeteer');
+const puppeteer2 = require('puppeteer');  // npm install puppeteer
 const fs = require('fs');
-const browser = await puppeteer.launch({
-  headless: true,          // false để debug thấy trình duyệt
-  args: ['--no-sandbox', '--disable-setuid-sandbox'] // cần cho một số server/VPS
-});
-
 
 (async () => {
+  const browser = await puppeteer.launch({
+    headless: true,          // false để debug thấy trình duyệt
+    args: ['--no-sandbox', '--disable-setuid-sandbox'] // cần cho một số server/VPS
+  });
+
   const page = await browser.newPage();
   await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) ...'); // tránh bị chặn
 
@@ -112,6 +113,10 @@ async function getVCBRates() {
 }
 
 async function silver(){
+  const browser = await puppeteer2.launch({
+    headless: true,          // false để debug thấy trình duyệt
+    args: ['--no-sandbox', '--disable-setuid-sandbox'] // cần cho một số server/VPS
+  });
   const page = await browser.newPage();
   await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) ...'); // tránh bị chặn
 
