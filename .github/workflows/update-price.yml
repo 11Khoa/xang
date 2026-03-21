@@ -1,8 +1,11 @@
 name: Update Petrolimex Prices
 
 on:
+  push:
+    paths:
+      - 'index.js'
   schedule:
-    - cron: '0 1,9,17 * * *'          # 8h UTC ≈ 15h VN
+    - cron: '0 */4 * * *'          # 8h UTC ≈ 15h VN
   workflow_dispatch:             # Chạy thủ công khi cần
 
 jobs:
