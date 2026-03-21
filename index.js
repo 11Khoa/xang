@@ -156,7 +156,7 @@ const result = {
 
 // console.log(JSON.stringify(data, null, 2));
   fs.writeFileSync('public/silver.json', JSON.stringify(result, null, 2), 'utf8');
-  console.log('Đã ghi thành công file: public/silver.json');
+  console.log('Đã ghi thành công file: public/silver.json 111');
 
   await browser.close();
 }
