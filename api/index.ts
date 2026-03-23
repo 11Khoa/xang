@@ -31,6 +31,9 @@ export default function handler(req, res) {
 
   const html = `
   <html>
+  <head>
+    <link rel="shortcut icon" href="https://bg.khoand.xyz/img/favicon.ico">
+  </head>
   <body>
     <h1>JSON files</h1>
     <ul>
