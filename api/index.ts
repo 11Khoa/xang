@@ -26,7 +26,7 @@ export default function handler(req, res) {
   const files = getAllJsonFiles(publicDir);
 
   const links = files
-    .map((f) => `<li><a href="/${f}">${f}</a></li>`)
+    .map((f) => `<li><a href="/${f.split('.')[0]}">${f.split('.')[0]}</a></li>`)
     .join("");
 
   const html = `
