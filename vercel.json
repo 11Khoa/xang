@@ -1,9 +1,9 @@
 { "rewrites": [
 { "source": "/", "destination": "/api/index" }
 ,
-{ "source": "/prices", "destination": "/public/prices.json" }
+{ "source": "/prices", "destination": "/prices.json" }
 ,
-{ "source": "/rates", "destination": "/public/rates.json" }
+{ "source": "/rates", "destination": "/rates.json" }
 ,
-{ "source": "/silver", "destination": "/public/silver.json" }
+{ "source": "/silver", "destination": "/silver.json" }
 ] }
