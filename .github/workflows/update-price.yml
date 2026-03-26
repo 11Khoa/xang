@@ -58,6 +58,22 @@ jobs:
 
       - name: Run scraper (giả sử index.js sẽ đọc prices.json cũ → append → ghi đè)
         run: node index.js
+        
+      - name: Generate vercel.json
+        run: |
+          echo '{ "rewrites": [' > vercel.json
+      
+          echo '{ "source": "/", "destination": "/api/index" }' >> vercel.json
+      
+          for file in public/*.json; do
+            name=$(basename "$file" .json)
+            echo ',' >> vercel.json
+            echo "{ \"source\": \"/$name\", \"destination\": \"/public/$name.json\" }" >> vercel.json
+          done
+      
+          echo '] }' >> vercel.json
+      
+          cat vercel.json
 
       - name: Commit & push if there are changes
         run: |
