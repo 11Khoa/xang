@@ -135,7 +135,7 @@ async function silver(){
 
   const regex = /<tr>\s*<td>\s*<a[^>]*>([^<]+)<\/a>\s*<\/td>\s*<td class="txt-sell">([\d,]+)<\/td>\s*<td class="txt-buy">([\d,]+)<\/td>\s*<td class="txt-sell">([\d,]+)<\/td>\s*<td class="txt-buy">([\d,]+)<\/td>/gs;
   const updateTime = await page.$eval(".txt-update", el => el.textContent.trim());
-  console.log(updateTime);
+  // console.log(updateTime);
   
 let data = [];
 let match;
