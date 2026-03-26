@@ -1,5 +1,9 @@
-{
-  "routes": [
-    { "src": "^/$", "dest": "/api/index" }
-  ]
-}
+{ "rewrites": [
+{ "source": "/", "destination": "/api/index" }
+,
+{ "source": "/prices", "destination": "/public/prices.json" }
+,
+{ "source": "/rates", "destination": "/public/rates.json" }
+,
+{ "source": "/silver", "destination": "/public/silver.json" }
+] }
