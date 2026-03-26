@@ -1,6 +1,7 @@
 const puppeteer = require('puppeteer');
 const puppeteer2 = require('puppeteer');  // npm install puppeteer
 const fs = require('fs');
+fs.mkdirSync('public', { recursive: true });
 
 (async () => {
   const browser = await puppeteer.launch({
@@ -156,7 +157,7 @@ const result = {
 
 // console.log(JSON.stringify(data, null, 2));
   fs.writeFileSync('public/silver.json', JSON.stringify(result, null, 2), 'utf8');
-  console.log('Đã ghi thành công file: public/silver.json 111');
+  console.log('Đã ghi thành công file: public/silver.json');
 
   await browser.close();
 }
