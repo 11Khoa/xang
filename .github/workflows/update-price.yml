@@ -61,19 +61,23 @@ jobs:
         
       - name: Generate vercel.json
         run: |
-          echo '{ "headers": [{ "source": "/(.*).json", "headers": [{ "key": "Cache-Control", "value": "s-maxage=60, stale-while-revalidate" }] }] }' > vercel.json
-          echo '{ "rewrites": [' > vercel.json
-      
+          echo '{' > vercel.json
+          echo '"rewrites": [' >> vercel.json
+
           echo '{ "source": "/", "destination": "/api/index" }' >> vercel.json
-      
+
           for file in public/*.json; do
             name=$(basename "$file" .json)
             echo ',' >> vercel.json
             echo "{ \"source\": \"/$name\", \"destination\": \"/$name.json\" }" >> vercel.json
           done
-      
-          echo '] }' >> vercel.json
-      
+
+          echo '],' >> vercel.json
+
+          echo '"headers": [{ "source": "/(.*).json", "headers": [{ "key": "Cache-Control", "value": "s-maxage=60, stale-while-revalidate" }] }]' >> vercel.json
+
+          echo '}' >> vercel.json
+
           cat vercel.json
 
       - name: Commit & push if there are changes
