@@ -1,4 +1,5 @@
-{ "rewrites": [
+{
+"rewrites": [
 { "source": "/", "destination": "/api/index" }
 ,
 { "source": "/prices", "destination": "/prices.json" }
@@ -6,4 +7,6 @@
 { "source": "/rates", "destination": "/rates.json" }
 ,
 { "source": "/silver", "destination": "/silver.json" }
-] }
+],
+"headers": [{ "source": "/(.*).json", "headers": [{ "key": "Cache-Control", "value": "s-maxage=60, stale-while-revalidate" }] }]
+}
