@@ -1,19 +1,19 @@
 {
-  "updateTime": "Cập nhật lần cuối: 31/03/2026 08:20:01",
+  "updateTime": "Cập nhật lần cuối: 31/03/2026 12:40:01",
   "data": [
     {
       "hang": "Phú Quý",
-      "gia_mua_luong": "2,671,000",
-      "gia_ban_luong": "2,754,000",
-      "gia_mua_kg": "71,226,489",
-      "gia_ban_kg": "73,439,816"
+      "gia_mua_luong": "2,716,000",
+      "gia_ban_luong": "2,800,000",
+      "gia_mua_kg": "72,426,486",
+      "gia_ban_kg": "74,666,480"
     },
     {
       "hang": "Kim Ngân Phúc",
-      "gia_mua_luong": "2,553,000",
-      "gia_ban_luong": "2,663,000",
+      "gia_mua_luong": "2,560,000",
+      "gia_ban_luong": "2,670,000",
       "gia_mua_kg": "68,050,000",
-      "gia_ban_kg": "70,250,000"
+      "gia_ban_kg": "70,450,000"
     }
   ]
 }
