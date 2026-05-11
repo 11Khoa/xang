@@ -1,99 +1,99 @@
-name: Update Petrolimex Prices
+# name: Update Petrolimex Prices
 
-on:
-  push:
-    paths:
-      - 'index.js'
-  schedule:
-    - cron: '0 */4 * * *'          # 8h UTC ≈ 15h VN
-  workflow_dispatch:             # Chạy thủ công khi cần
+# on:
+#   push:
+#     paths:
+#       - 'index.js'
+#   schedule:
+#     - cron: '0 */4 * * *'          # 8h UTC ≈ 15h VN
+#   workflow_dispatch:             # Chạy thủ công khi cần
 
-jobs:
-  scrape:
-    runs-on: ubuntu-latest
+# jobs:
+#   scrape:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Set timezone
-        run: sudo timedatectl set-timezone Asia/Ho_Chi_Minh
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0           # Quan trọng để git push ổn định
+#     steps:
+#       - name: Set timezone
+#         run: sudo timedatectl set-timezone Asia/Ho_Chi_Minh
+#       - name: Checkout repository
+#         uses: actions/checkout@v4
+#         with:
+#           fetch-depth: 0           # Quan trọng để git push ổn định
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
+#       - name: Setup Node.js
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: '20'
 
-      - name: Install dependencies
-        run: npm install puppeteer
+#       - name: Install dependencies
+#         run: npm install puppeteer
 
-      # - name: Install jq (dùng để tạo/cập nhật JSON nếu cần)
-      #   run: sudo apt-get update && sudo apt-get install -y jq
+#       # - name: Install jq (dùng để tạo/cập nhật JSON nếu cần)
+#       #   run: sudo apt-get update && sudo apt-get install -y jq
 
-      # - name: Ensure prices.json exists (array rỗng nếu mới)
-      #   run: |
-      #     mkdir -p public
+#       # - name: Ensure prices.json exists (array rỗng nếu mới)
+#       #   run: |
+#       #     mkdir -p public
           
-      #     if [ ! -f public/prices.json ]; then
-      #       echo "[]" > public/prices.json
-      #       echo "Tạo mới prices.json (array rỗng)"
-      #     else
-      #       echo "prices.json đã tồn tại"
-      #     fi
+#       #     if [ ! -f public/prices.json ]; then
+#       #       echo "[]" > public/prices.json
+#       #       echo "Tạo mới prices.json (array rỗng)"
+#       #     else
+#       #       echo "prices.json đã tồn tại"
+#       #     fi
 
-      #     if [ ! -f public/rates.json ]; then
-      #       echo "[]" > public/rates.json
-      #       echo "Tạo mới rates.json (array rỗng)"
-      #     else
-      #       echo "rates.json đã tồn tại"
-      #     fi
+#       #     if [ ! -f public/rates.json ]; then
+#       #       echo "[]" > public/rates.json
+#       #       echo "Tạo mới rates.json (array rỗng)"
+#       #     else
+#       #       echo "rates.json đã tồn tại"
+#       #     fi
 
-      #     if [ ! -f public/silver.json ]; then
-      #       echo "[]" > public/silver.json
-      #       echo "Tạo mới silver.json (array rỗng)"
-      #     else
-      #       echo "silver.json đã tồn tại"
-      #     fi
+#       #     if [ ! -f public/silver.json ]; then
+#       #       echo "[]" > public/silver.json
+#       #       echo "Tạo mới silver.json (array rỗng)"
+#       #     else
+#       #       echo "silver.json đã tồn tại"
+#       #     fi
 
-      - name: Run scraper
-        run: node index.js
+#       - name: Run scraper
+#         run: node index.js
         
-      - name: Generate vercel.json
-        run: |
-          echo '{' > vercel.json
-          echo '"rewrites": [' >> vercel.json
+#       - name: Generate vercel.json
+#         run: |
+#           echo '{' > vercel.json
+#           echo '"rewrites": [' >> vercel.json
 
-          echo '{ "source": "/", "destination": "/api/index" }' >> vercel.json
+#           echo '{ "source": "/", "destination": "/api/index" }' >> vercel.json
 
-          for file in public/*.json; do
-            name=$(basename "$file" .json)
-            echo ',' >> vercel.json
-            echo "{ \"source\": \"/$name\", \"destination\": \"/$name.json\" }" >> vercel.json
-          done
+#           for file in public/*.json; do
+#             name=$(basename "$file" .json)
+#             echo ',' >> vercel.json
+#             echo "{ \"source\": \"/$name\", \"destination\": \"/$name.json\" }" >> vercel.json
+#           done
 
-          echo '],' >> vercel.json
+#           echo '],' >> vercel.json
 
-          echo '"headers": [{ "source": "/(.*).json", "headers": [{ "key": "Cache-Control", "value": "s-maxage=60, stale-while-revalidate" }] }]' >> vercel.json
+#           echo '"headers": [{ "source": "/(.*).json", "headers": [{ "key": "Cache-Control", "value": "s-maxage=60, stale-while-revalidate" }] }]' >> vercel.json
 
-          echo '}' >> vercel.json
+#           echo '}' >> vercel.json
 
-          cat vercel.json
+#           cat vercel.json
 
-      - name: Commit & push if there are changes
-        run: |
-          git config --global user.name "GitHub Action"
-          git config --global user.email "action@github.com"
+#       - name: Commit & push if there are changes
+#         run: |
+#           git config --global user.name "GitHub Action"
+#           git config --global user.email "action@github.com"
 
-          git add .
+#           git add .
 
-          # Kiểm tra có thay đổi thực sự không
-          if git diff --staged --quiet; then
-            echo "Không có thay đổi trong → bỏ qua commit"
-          else
-            git commit -m "Update Json $(date +'%Y-%m-%d %H:%M GMT+7')"
-            git push
-            echo "Đã commit & push dữ liệu mới"
-          fi
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#           # Kiểm tra có thay đổi thực sự không
+#           if git diff --staged --quiet; then
+#             echo "Không có thay đổi trong → bỏ qua commit"
+#           else
+#             git commit -m "Update Json $(date +'%Y-%m-%d %H:%M GMT+7')"
+#             git push
+#             echo "Đã commit & push dữ liệu mới"
+#           fi
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
