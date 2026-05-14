@@ -163,4 +163,4 @@ const result = {
 }
 
 getVCBRates();
-silver();
+// silver();
