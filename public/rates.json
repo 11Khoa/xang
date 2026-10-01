@@ -1,7 +1,7 @@
 {
   "Count": 20,
   "Date": "2026-10-01T00:00:00",
-  "UpdatedDate": "2026-09-30T23:00:00+07:00",
+  "UpdatedDate": "2026-10-01T10:12:43+07:00",
   "Data": [
     {
       "currencyName": "US DOLLAR",
@@ -15,36 +15,36 @@
     {
       "currencyName": "EURO",
       "currencyCode": "EUR",
-      "cash": "28688.44",
-      "transfer": "28978.22",
-      "sell": "30201.48",
+      "cash": "28680.85",
+      "transfer": "28970.55",
+      "sell": "30193.49",
       "icon": "https://www.vietcombank.com.vn/-/media/Default-Website/Default-Images/Icons/Flags/im_flag_eur.svg?h=32&w=32&ts=20230610195955&hash=10502813C2316A5601FD57F7A0C89A3A",
       "emoji": "🇪🇺"
     },
     {
       "currencyName": "UK POUND STERLING",
       "currencyCode": "GBP",
-      "cash": "33466.05",
-      "transfer": "33804.09",
-      "sell": "34887.35",
+      "cash": "33574.86",
+      "transfer": "33914.00",
+      "sell": "35000.78",
       "icon": "https://www.vietcombank.com.vn/-/media/Default-Website/Default-Images/Icons/Flags/im_flag_gbp.svg?h=32&w=32&ts=20230610195950&hash=72ED63A02E20F8B413E65DE9B7F062AE",
       "emoji": "🇬🇧"
     },
     {
       "currencyName": "JAPANESE YEN",
       "currencyCode": "JPY",
-      "cash": "159.34",
-      "transfer": "160.95",
-      "sell": "170.34",
+      "cash": "158.86",
+      "transfer": "160.47",
+      "sell": "169.83",
       "icon": "https://www.vietcombank.com.vn/-/media/Default-Website/Default-Images/Icons/Flags/im_flag_jpy.svg?h=32&w=32&ts=20230610195953&hash=C5D3E7B6B5EEE49C3D5C3C3A8B6798B8",
       "emoji": "🇯🇵"
     },
     {
       "currencyName": "AUSTRALIAN DOLLAR",
       "currencyCode": "AUD",
-      "cash": "17680.70",
-      "transfer": "17859.30",
-      "sell": "18431.60",
+      "cash": "17569.36",
+      "transfer": "17746.83",
+      "sell": "18315.53",
       "icon": "https://www.vietcombank.com.vn/-/media/Default-Website/Default-Images/Icons/Flags/im_flag_aud.svg?h=32&w=32&ts=20230610195950&hash=F70700292015EB326CA79643D4F05C03",
       "emoji": "🇦🇺"
     },
@@ -60,45 +60,45 @@
     {
       "currencyName": "THAI BAHT",
       "currencyCode": "THB",
-      "cash": "682.68",
-      "transfer": "758.53",
-      "sell": "790.71",
+      "cash": "681.05",
+      "transfer": "756.73",
+      "sell": "788.83",
       "icon": "https://www.vietcombank.com.vn/-/media/Default-Website/Default-Images/Icons/Flags/im_flag_thb.svg?h=32&w=32&ts=20230610195952&hash=AB6CDBA1C854ADE46132EBF0A6DCFEF4",
       "emoji": "🇹🇭"
     },
     {
       "currencyName": "CANADIAN DOLLAR",
       "currencyCode": "CAD",
-      "cash": "17837.09",
-      "transfer": "18017.27",
-      "sell": "18594.63",
+      "cash": "17784.46",
+      "transfer": "17964.10",
+      "sell": "18539.76",
       "icon": "https://www.vietcombank.com.vn/-/media/Default-Website/Default-Images/Icons/Flags/im_flag_cad.svg?h=32&w=32&ts=20230610195951&hash=55B303641110059C97F6ABDE45B2FE20",
       "emoji": "🇨🇦"
     },
     {
       "currencyName": "SWISS FRANC",
       "currencyCode": "CHF",
-      "cash": "30345.09",
-      "transfer": "30651.60",
-      "sell": "31633.84",
+      "cash": "30319.64",
+      "transfer": "30625.90",
+      "sell": "31607.32",
       "icon": "https://www.vietcombank.com.vn/-/media/Default-Website/Default-Images/Icons/Flags/im_flag_chf.svg?h=32&w=32&ts=20230610195952&hash=CBA2E48794BD6E04AAF8761C55AB07DF",
       "emoji": "🇨🇭"
     },
     {
       "currencyName": "HONG KONG DOLLAR",
       "currencyCode": "HKD",
-      "cash": "3216.69",
-      "transfer": "3249.19",
-      "sell": "3373.49",
+      "cash": "3216.16",
+      "transfer": "3248.65",
+      "sell": "3372.93",
       "icon": "https://www.vietcombank.com.vn/-/media/Default-Website/Default-Images/Icons/Flags/im_flag_hkd.svg?h=32&w=32&ts=20230610195951&hash=E50E43ECCD43C736E273734DEEB000D8",
       "emoji": "🇭🇰"
     },
     {
       "currencyName": "CHINESE YUAN",
       "currencyCode": "CNY",
-      "cash": "3776.05",
-      "transfer": "3814.19",
-      "sell": "3936.41",
+      "cash": "3775.20",
+      "transfer": "3813.33",
+      "sell": "3935.53",
       "icon": "https://www.vietcombank.com.vn/-/media/Default-Website/Default-Images/Icons/Flags/im_flag_cny.svg?h=33&w=48&ts=20260128153350&hash=86F34735C929A59E0494E2D69A712AC1",
       "emoji": "🇨🇳"
     },
@@ -106,8 +106,8 @@
       "currencyName": "DANISH KRONE",
       "currencyCode": "DKK",
       "cash": "0.00",
-      "transfer": "3866.69",
-      "sell": "4014.62",
+      "transfer": "3865.40",
+      "sell": "4013.28",
       "icon": "https://www.vietcombank.com.vn/-/media/Default-Website/Default-Images/Icons/Flags/im_flag_dkk.svg?h=33&w=48&ts=20230610195954&hash=29FEC240C9B18E8DB3FDD1D9FB06C3F1",
       "emoji": "🇩🇰"
     },
@@ -123,9 +123,9 @@
     {
       "currencyName": "KOREAN WON",
       "currencyCode": "KRW",
-      "cash": "16.55",
-      "transfer": "18.39",
-      "sell": "19.95",
+      "cash": "16.49",
+      "transfer": "18.32",
+      "sell": "19.88",
       "icon": "https://www.vietcombank.com.vn/-/media/Default-Website/Default-Images/Icons/Flags/im_flag_krw.svg?h=33&w=48&ts=20230709003433&hash=E14E3980498122FE50A6B7CC80A83E3A",
       "emoji": "🇰🇷"
     },
@@ -133,8 +133,8 @@
       "currencyName": "KUWAITI DINAR",
       "currencyCode": "KWD",
       "cash": "0.00",
-      "transfer": "83943.09",
-      "sell": "88013.38",
+      "transfer": "83888.55",
+      "sell": "87956.19",
       "icon": "https://www.vietcombank.com.vn/-/media/Default-Website/Default-Images/Icons/Flags/im_flag_kwd.svg?h=33&w=48&ts=20230610195949&hash=EDDE204A3F8CE87E0DF2B8609892EDA8",
       "emoji": "🏳️"
     },
@@ -142,8 +142,8 @@
       "currencyName": "MALAYSIAN RINGGIT",
       "currencyCode": "MYR",
       "cash": "0.00",
-      "transfer": "6303.50",
-      "sell": "6440.76",
+      "transfer": "6291.15",
+      "sell": "6428.14",
       "icon": "https://www.vietcombank.com.vn/-/media/Default-Website/Default-Images/Icons/Flags/im_flag_myr.svg?h=33&w=48&ts=20230610195950&hash=1261923BB8AFC42265898F2C704ABBF3",
       "emoji": "🇲🇾"
     },
@@ -151,8 +151,8 @@
       "currencyName": "NORWEGIAN KRONE",
       "currencyCode": "NOK",
       "cash": "0.00",
-      "transfer": "2651.28",
-      "sell": "2763.75",
+      "transfer": "2644.53",
+      "sell": "2756.71",
       "icon": "https://www.vietcombank.com.vn/-/media/Default-Website/Default-Images/Icons/Flags/im_flag_nok.svg?h=33&w=48&ts=20230610195951&hash=6C93A30F69B39B822266989CCE050685",
       "emoji": "🇳🇴"
     },
@@ -160,8 +160,8 @@
       "currencyName": "RUSSIAN RUBLE",
       "currencyCode": "RUB",
       "cash": "0.00",
-      "transfer": "294.22",
-      "sell": "325.69",
+      "transfer": "296.44",
+      "sell": "328.15",
       "icon": "https://www.vietcombank.com.vn/-/media/Default-Website/Default-Images/Icons/Flags/im_flag_rub.svg?h=33&w=48&ts=20230709003433&hash=28CD708E031DC6CFDD54F5F0462B746E",
       "emoji": "🇷🇺"
     },
@@ -169,8 +169,8 @@
       "currencyName": "SAUDI ARABIAN RIYAL",
       "currencyCode": "SAR",
       "cash": "0.00",
-      "transfer": "6876.77",
-      "sell": "7172.86",
+      "transfer": "6877.14",
+      "sell": "7173.24",
       "icon": "https://www.vietcombank.com.vn/-/media/Default-Website/Default-Images/Icons/Flags/im_flag_sar.svg?h=33&w=48&ts=20230610195954&hash=B527E5E96B54FD5B513C8659C3B56A53",
       "emoji": "🏳️"
     },
@@ -178,8 +178,8 @@
       "currencyName": "SWEDISH KRONA",
       "currencyCode": "SEK",
       "cash": "0.00",
-      "transfer": "2546.87",
-      "sell": "2654.91",
+      "transfer": "2543.25",
+      "sell": "2651.14",
       "icon": "https://www.vietcombank.com.vn/-/media/Default-Website/Default-Images/Icons/Flags/im_flag_sek.svg?h=33&w=48&ts=20230610195949&hash=12ADB15CE04490C8F55E48DAB353ED8C",
       "emoji": "🇸🇪"
     }
