@@ -1,7 +1,7 @@
 {
   "Count": 20,
-  "Date": "2026-11-26T00:00:00",
-  "UpdatedDate": "2026-11-26T16:39:07+07:00",
+  "Date": "2026-11-27T00:00:00",
+  "UpdatedDate": "2026-11-26T23:00:00+07:00",
   "Data": [
     {
       "currencyName": "US DOLLAR",
@@ -9,7 +9,7 @@
       "cash": "25600.00",
       "transfer": "25630.00",
       "sell": "26010.00",
-      "icon": "https://www.vietcombank.com.vn/-/media/Default-Website/Default-Images/Icons/Flags/im_flag_usa.svg?h=32&w=32&ts=20230610195953&hash=4576D9B7C910424CC72B7A592BA369AE",
+      "icon": "https://www.vietcombank.com.vn/-/media/Default-Website/Default-Images/Icons/Flags/im_flag_usa.svg?h=160&w=540&ts=20230610195953&hash=F8F923C3027522D4DE48C7404ACC1A2E",
       "emoji": "🇺🇸"
     },
     {
@@ -18,7 +18,7 @@
       "cash": "27621.92",
       "transfer": "27900.93",
       "sell": "29078.98",
-      "icon": "https://www.vietcombank.com.vn/-/media/Default-Website/Default-Images/Icons/Flags/im_flag_eur.svg?h=32&w=32&ts=20230610195955&hash=10502813C2316A5601FD57F7A0C89A3A",
+      "icon": "https://www.vietcombank.com.vn/-/media/Default-Website/Default-Images/Icons/Flags/im_flag_eur.svg?h=160&w=540&ts=20230610195955&hash=E77AB96F114C593F7AEC806FC44BD291",
       "emoji": "🇪🇺"
     },
     {
@@ -27,7 +27,7 @@
       "cash": "32988.31",
       "transfer": "33321.53",
       "sell": "34389.63",
-      "icon": "https://www.vietcombank.com.vn/-/media/Default-Website/Default-Images/Icons/Flags/im_flag_gbp.svg?h=32&w=32&ts=20230610195950&hash=72ED63A02E20F8B413E65DE9B7F062AE",
+      "icon": "https://www.vietcombank.com.vn/-/media/Default-Website/Default-Images/Icons/Flags/im_flag_gbp.svg?h=160&w=540&ts=20230610195950&hash=738734F1E336D1DBBE821DB8F368B6FB",
       "emoji": "🇬🇧"
     },
     {
@@ -36,7 +36,7 @@
       "cash": "156.19",
       "transfer": "157.77",
       "sell": "166.95",
-      "icon": "https://www.vietcombank.com.vn/-/media/Default-Website/Default-Images/Icons/Flags/im_flag_jpy.svg?h=32&w=32&ts=20230610195953&hash=C5D3E7B6B5EEE49C3D5C3C3A8B6798B8",
+      "icon": "https://www.vietcombank.com.vn/-/media/Default-Website/Default-Images/Icons/Flags/im_flag_jpy.svg?h=160&w=540&ts=20230610195953&hash=1CFA5E6BEF3AFAD2A4576279515C8B8E",
       "emoji": "🇯🇵"
     },
     {
@@ -45,7 +45,7 @@
       "cash": "16685.36",
       "transfer": "16853.90",
       "sell": "17394.14",
-      "icon": "https://www.vietcombank.com.vn/-/media/Default-Website/Default-Images/Icons/Flags/im_flag_aud.svg?h=32&w=32&ts=20230610195950&hash=F70700292015EB326CA79643D4F05C03",
+      "icon": "https://www.vietcombank.com.vn/-/media/Default-Website/Default-Images/Icons/Flags/im_flag_aud.svg?h=160&w=540&ts=20230610195950&hash=E3963CD69C452F217FB5E5876E5AE510",
       "emoji": "🇦🇺"
     },
     {
@@ -54,7 +54,7 @@
       "cash": "19488.19",
       "transfer": "19685.04",
       "sell": "20356.72",
-      "icon": "https://www.vietcombank.com.vn/-/media/Default-Website/Default-Images/Icons/Flags/im_flag_sgd.svg?h=32&w=32&ts=20230709003433&hash=C95A1CFD98A6896023B5EFE9D23459AA",
+      "icon": "https://www.vietcombank.com.vn/-/media/Default-Website/Default-Images/Icons/Flags/im_flag_sgd.svg?h=160&w=540&ts=20230709003433&hash=F1C5D1BCBEB75F6F787074575FCB5A10",
       "emoji": "🇸🇬"
     },
     {
@@ -63,7 +63,7 @@
       "cash": "668.96",
       "transfer": "743.29",
       "sell": "774.83",
-      "icon": "https://www.vietcombank.com.vn/-/media/Default-Website/Default-Images/Icons/Flags/im_flag_thb.svg?h=32&w=32&ts=20230610195952&hash=AB6CDBA1C854ADE46132EBF0A6DCFEF4",
+      "icon": "https://www.vietcombank.com.vn/-/media/Default-Website/Default-Images/Icons/Flags/im_flag_thb.svg?h=160&w=540&ts=20230610195952&hash=4229EE6CDC7AE540FCDB342520DF54BC",
       "emoji": "🇹🇭"
     },
     {
@@ -72,7 +72,7 @@
       "cash": "17699.07",
       "transfer": "17877.84",
       "sell": "18450.91",
-      "icon": "https://www.vietcombank.com.vn/-/media/Default-Website/Default-Images/Icons/Flags/im_flag_cad.svg?h=32&w=32&ts=20230610195951&hash=55B303641110059C97F6ABDE45B2FE20",
+      "icon": "https://www.vietcombank.com.vn/-/media/Default-Website/Default-Images/Icons/Flags/im_flag_cad.svg?h=160&w=540&ts=20230610195951&hash=44758066FCED9B029776D7358FBEAD8B",
       "emoji": "🇨🇦"
     },
     {
@@ -81,7 +81,7 @@
       "cash": "30234.93",
       "transfer": "30540.33",
       "sell": "31519.29",
-      "icon": "https://www.vietcombank.com.vn/-/media/Default-Website/Default-Images/Icons/Flags/im_flag_chf.svg?h=32&w=32&ts=20230610195952&hash=CBA2E48794BD6E04AAF8761C55AB07DF",
+      "icon": "https://www.vietcombank.com.vn/-/media/Default-Website/Default-Images/Icons/Flags/im_flag_chf.svg?h=160&w=540&ts=20230610195952&hash=FD1D7ADD72F12608EA5D2F02A3DD5F3D",
       "emoji": "🇨🇭"
     },
     {
@@ -90,7 +90,7 @@
       "cash": "3201.08",
       "transfer": "3233.41",
       "sell": "3357.15",
-      "icon": "https://www.vietcombank.com.vn/-/media/Default-Website/Default-Images/Icons/Flags/im_flag_hkd.svg?h=32&w=32&ts=20230610195951&hash=E50E43ECCD43C736E273734DEEB000D8",
+      "icon": "https://www.vietcombank.com.vn/-/media/Default-Website/Default-Images/Icons/Flags/im_flag_hkd.svg?h=160&w=540&ts=20230610195951&hash=C1BCBC9EED8E34F10E86F28292CC4DC6",
       "emoji": "🇭🇰"
     },
     {
